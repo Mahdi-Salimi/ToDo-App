@@ -4,11 +4,11 @@
   <h2>Delete Task</h2>
   <p>Are you sure you want to delete the task "{{ object }}"?</p>
 
-  <form method="post" action="{% url 'delete_task' object.id %}">
+  <form method="post" action="{% url 'todo:delete_task' object.id %}">
     {% csrf_token %}
-    <input type="hidden" name="next" value="{% url 'task_list' %}">
+    <input type="hidden" name="next" value="{% url 'todo:task_list' %}">
     <input type="submit" value="Confirm Delete">
   </form>
 
-  <a href="{% url 'task_list' %}">Cancel</a>
+  <a href="{% url 'todo:task_list' %}">Cancel</a>
 {% endblock %}
